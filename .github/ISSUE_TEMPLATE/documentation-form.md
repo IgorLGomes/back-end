@@ -1,7 +1,6 @@
 ---
 name: Documentation form
-about: Describe this issue template's purpose here.Sugira melhorias ou reporte erros
-  na documentação
+about: Sugira melhorias ou reporte erros na documentação
 title: 'DOCS: '
 labels: documentation
 assignees: ''
