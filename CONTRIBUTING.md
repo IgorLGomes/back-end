@@ -1,5 +1,3 @@
-# Back-end
-
 # Guia de Contribuição
 
 Este documento descreve o fluxo de trabalho adotado neste repositório. Siga as etapas abaixo para contribuir de forma organizada.
