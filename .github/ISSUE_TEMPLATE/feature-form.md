@@ -1,7 +1,7 @@
 ---
 name: Feature form
 about: Descreva a nova funcionalidade
-title: FEATURE
+title: 'FEATURE:'
 labels: bug, documentation, enhancement, invalid
 assignees: IgorLGomes
 
