@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Sua sugestão de melhoria está relacionada a um problema?**
-Uma descrição clara e concisa do que é o problema. Ex: Eu sempre fico tenho problemas quando [...]
+Uma descrição clara e concisa do que é o problema. Ex: Eu sempre tenho problemas quando [...]
 
 **Descreva a solução que você gostaria de ver implementada**
 Uma descrição clara e concisa do que você deseja que aconteça e como a nova funcionalidade deve se comportar.
