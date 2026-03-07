@@ -8,8 +8,8 @@ import { EmpresaDto } from './dto/empresa-response.dto';
 export class ContatoService {
 
   constructor(
-    @InjectModel(Empresa) private empresaModel: typeof Empresa    
-  ) {}
+    @InjectModel(Empresa) private empresaModel: typeof Empresa
+  ) { }
 
   async buscarContato(): Promise<EmpresaDto> {
     const empresa: Empresa | null = await this.empresaModel.findOne();
@@ -18,17 +18,17 @@ export class ContatoService {
       throw new HttpException('Dados de contato não encontrados', HttpStatus.NOT_FOUND);
     }
 
-    return new EmpresaDto(     
-      empresa.id, 
-      empresa.nomeFantasia,
-      empresa.cnpj,
-      empresa.telefone,
-      empresa.email,
-      empresa.endereco,
-      empresa.cidade,
-      empresa.estado,
-      empresa.site
-    );    
+    return new EmpresaDto(
+      empresa.id,
+      empresa.nomeFantasia ?? '',
+      empresa.cnpj ?? '',
+      empresa.telefone ?? '',
+      empresa.email ?? '',
+      empresa.endereco ?? '',
+      empresa.cidade ?? '',
+      empresa.estado ?? '',
+      empresa.site ?? ''
+    );
   }
 
   async buscarContatoById(id: number): Promise<EmpresaDto> {
@@ -38,16 +38,16 @@ export class ContatoService {
       throw new NotFoundException('Dados de contato não encontrados');
     }
 
-    return new EmpresaDto(      
+    return new EmpresaDto(
       empresa.id,
-      empresa.nomeFantasia,
-      empresa.cnpj,
-      empresa.telefone,
-      empresa.email,
-      empresa.endereco,
-      empresa.cidade,
-      empresa.estado,
-      empresa.site
+      empresa.nomeFantasia ?? '',
+      empresa.cnpj ?? '',
+      empresa.telefone ?? '',
+      empresa.email ?? '',
+      empresa.endereco ?? '',
+      empresa.cidade ?? '',
+      empresa.estado ?? '',
+      empresa.site ?? ''
     );
   }
 }
