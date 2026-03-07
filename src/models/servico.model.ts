@@ -2,13 +2,13 @@ import { Column, DataType, Model, Table } from 'sequelize-typescript';
 
 @Table({ tableName: 'servico' })
 export class Servico extends Model {
-  @Column({ primaryKey: true, autoIncrement: true })
+  @Column({ primaryKey: true, autoIncrement: true, allowNull: false })
   declare id: number;
 
-  @Column
+  @Column({ type: DataType.STRING(100), allowNull: false })
   declare nome: string;
 
-  @Column({ allowNull: true })
+  @Column({ type: DataType.TEXT, allowNull: true })
   declare descricao: string | null;
 
   @Column({
@@ -18,7 +18,7 @@ export class Servico extends Model {
   })
   declare valorBase: number | null;
 
-  @Column({ field: 'prazo_estimado_dias', allowNull: true })
+  @Column({ field: 'prazo_estimado_dias', type: DataType.INTEGER, allowNull: true })
   declare prazoEstimadoDias: number | null;
 
   @Column({ allowNull: true, defaultValue: true })

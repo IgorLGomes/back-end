@@ -1,31 +1,31 @@
-import { Column, Model, Table } from 'sequelize-typescript';
+import { Column, DataType, Model, Table } from 'sequelize-typescript';
 
 @Table({ tableName: 'empresa' })
 export class Empresa extends Model {
-  @Column({ primaryKey: true, autoIncrement: true })
+  @Column({ primaryKey: true, autoIncrement: true, allowNull: false })
   declare id: number;
 
-  @Column({ field: 'nome_fantasia' })
-  declare nomeFantasia: string;
+  @Column({ field: 'nome_fantasia', type: DataType.STRING(100), allowNull: true })
+  declare nomeFantasia: string | null;
 
-  @Column
-  declare cnpj: string;
+  @Column({ type: DataType.STRING(20), allowNull: true })
+  declare cnpj: string | null;
 
-  @Column
-  declare telefone: string;
+  @Column({ type: DataType.STRING(20), allowNull: true })
+  declare telefone: string | null;
 
-  @Column
-  declare email: string;
+  @Column({type: DataType.STRING(100), allowNull: true })
+  declare email: string | null;
 
-  @Column
-  declare endereco: string;
+  @Column({type: DataType.STRING(255), allowNull: true })
+  declare endereco: string | null;
 
-  @Column
-  declare cidade: string;
+  @Column({type: DataType.STRING(100), allowNull: true })
+  declare cidade: string | null;
 
-  @Column
-  declare estado: string;
+  @Column({type: DataType.STRING(2), allowNull: true })
+  declare estado: string | null;
 
-  @Column
-  declare site: string;
+  @Column({type: DataType.STRING(100), allowNull: true })
+  declare site: string | null;
 }

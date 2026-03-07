@@ -1,20 +1,20 @@
 import {
+  BelongsTo,
   Column,
-  Model,
-  Table,
   DataType,
   ForeignKey,
-  BelongsTo,
+  Model,
+  Table,
 } from 'sequelize-typescript';
 import { Usuario } from './usuario.model';
 
 @Table({ tableName: 'veiculo' })
 export class Veiculo extends Model {
-  @Column({ primaryKey: true, autoIncrement: true })
+  @Column({ primaryKey: true, autoIncrement: true, allowNull: false })
   declare id: number;
 
   @ForeignKey(() => Usuario)
-  @Column({ field: 'usuario_id' })
+  @Column({ field: 'usuario_id', allowNull: false })
   declare usuarioId: number;
 
   @BelongsTo(() => Usuario)
@@ -22,6 +22,7 @@ export class Veiculo extends Model {
 
   @Column({
     type: DataType.STRING(10),
+    allowNull: false,
   })
   declare placa: string;
 
@@ -45,12 +46,14 @@ export class Veiculo extends Model {
 
   @Column({
     field: 'ano_fabricacao',
+    type: DataType.INTEGER,
     allowNull: true,
   })
   declare anoFabricacao: number | null;
 
   @Column({
     field: 'ano_modelo',
+    type: DataType.INTEGER,
     allowNull: true,
   })
   declare anoModelo: number | null;

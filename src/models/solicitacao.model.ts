@@ -1,36 +1,36 @@
 import {
+  BelongsTo,
   Column,
-  Model,
-  Table,
   DataType,
   ForeignKey,
-  BelongsTo,
+  Model,
+  Table
 } from 'sequelize-typescript';
-import { Usuario } from './usuario.model';
 import { Servico } from './servico.model';
+import { Usuario } from './usuario.model';
 import { Veiculo } from './veiculo.model';
 
 @Table({ tableName: 'solicitacao' })
 export class Solicitacao extends Model {
-  @Column({ primaryKey: true, autoIncrement: true })
+  @Column({ primaryKey: true, autoIncrement: true, allowNull: false })
   declare id: number;
 
   @ForeignKey(() => Usuario)
-  @Column({ field: 'usuario_id' })
+  @Column({ field: 'usuario_id', allowNull: false })
   declare usuarioId: number;
 
   @BelongsTo(() => Usuario)
   declare usuario: Usuario;
 
   @ForeignKey(() => Veiculo)
-  @Column({ field: 'veiculo_id' })
+  @Column({ field: 'veiculo_id', allowNull: false })
   declare veiculoId: number;
 
   @BelongsTo(() => Veiculo)
   declare veiculo: Veiculo;
 
   @ForeignKey(() => Servico)
-  @Column({ field: 'servico_id' })
+  @Column({ field: 'servico_id', allowNull: false })
   declare servicoId: number;
 
   @BelongsTo(() => Servico)
@@ -72,6 +72,7 @@ export class Solicitacao extends Model {
   @Column({
     field: 'data_solicitacao',
     type: DataType.DATE,
+    defaultValue: DataType.NOW,
   })
   declare dataSolicitacao: Date;
 

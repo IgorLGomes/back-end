@@ -5,10 +5,10 @@ export class Blog extends Model {
   @Column({ primaryKey: true, autoIncrement: true })
   declare id: number;
 
-  @Column({ field: 'url_imagem' })
-  declare titulo: string;
+  @Column({ type: DataType.STRING(150), allowNull: true })
+  declare titulo: string | null;;
 
-  @Column({ allowNull: true, type: DataType.TEXT })
+  @Column({ type: DataType.TEXT, allowNull: true })
   declare conteudo: string | null;
 
   @Column({
@@ -18,6 +18,10 @@ export class Blog extends Model {
   })
   declare dataPublicacao: Date | null;
 
-  @Column({ field: 'url_imagem' })
-  declare urlImagem: string;
+  @Column({
+    field: 'url_imagem',
+    type: DataType.STRING(255),
+    allowNull: true,
+  })
+  declare urlImagem: string | null;
 }
