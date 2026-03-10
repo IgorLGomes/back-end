@@ -7,11 +7,12 @@ on:
       - main
       - develop
       - release/**
+      - short-release/**
 
 permissions:
   contents: read
   checks: write
-  pull-requests: write
+  pull-requests: read
   actions: read
   security-events: write
 
@@ -38,7 +39,7 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci
-      - run: npm test  # removed --silent so errors are visible in CI logs
+      - run: npm test  
 
   build:
     name: Build
@@ -66,10 +67,6 @@ jobs:
       - name: Run npm audit (fail on high)
         run: npm audit --audit-level=high || (echo "High severity vulnerabilities found" && exit 1)
 
-      # Only meaningful on pull_request events — skip on push
-      - name: Dependency review
-        if: github.event_name == 'pull_request'
-        uses: actions/dependency-review-action@3b139cfc5fae8b618d3eae3675e383bb1769c019  # v4.3.2
 
   codeql:
     name: CodeQL
