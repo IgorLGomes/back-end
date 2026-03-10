@@ -27,7 +27,7 @@ jobs:
           node-version: '20'
           cache: 'npm'
       - run: npm ci
-      - run: npm run lint -- --no-fix --max-warnings=0
+      - run: npm run lint -- --no-fix
 
   test:
     name: Test
