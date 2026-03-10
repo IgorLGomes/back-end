@@ -1,5 +1,3 @@
-# Back-end
-
 # Guia de Contribuição
 
 Este documento descreve o fluxo de trabalho adotado neste repositório. Siga as etapas abaixo para contribuir de forma organizada.
@@ -64,7 +62,6 @@ Ou pelo **VSCode** (aba Source Control → trocar branch) ou pelo **GitHub Deskt
 ---
 
 ### 5. Desenvolva e commite
-(Para desenvolver siga o fluxo de setup do projeto localmente [Guia de Setup Local](#setup-local))
 
 Faça seu trabalho e commite seguindo o padrão [Conventional Commits](https://www.conventionalcommits.org/):
 
@@ -123,38 +120,3 @@ chore/      →  develop  →  main
 - **Todo merge** deve ser feito via Pull Request com ao menos **1 aprovação**
 - **Sempre crie sua branch a partir da Issue** para manter o rastreamento automático
 - **Atualize sua branch** com a base antes de abrir o PR para evitar conflitos
-
----
-
-## Setup Local
-``` 
-Caso seja necessário rodar o banco de dados localmente, utilize o repositório abaixo:
-https://github.com/laboratorio-de-praticas-2026-1/database
-Inicialize o banco utilizando Docker Compose e depois siga os passos para iniciar o back-end.
-```
-
-
-### 1. Clone o repositório
-
-```bash
-git clone https://github.com/laboratorio-de-praticas-2026-1/back-end.git
-```
-
----
-
-### 2. Instale as dependências
-
-```bash
-npm install
-```
-
----
-
-### 3. Crie um arquivo ``` .env ``` seguindo a estrutura de variáveis do ``` .env.example ```
-
----
-
-### 4. Inicialize o projeto
-```bash
-npm run start:dev
-```
