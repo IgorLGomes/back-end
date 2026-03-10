@@ -4,7 +4,7 @@ import {
   DataType,
   ForeignKey,
   Model,
-  Table
+  Table,
 } from 'sequelize-typescript';
 import { Servico } from './servico.model';
 import { Usuario } from './usuario.model';

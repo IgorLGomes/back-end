@@ -13,11 +13,11 @@ describe('BlogService', () => {
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
-        BlogService, 
+        BlogService,
         {
           provide: getModelToken(Blog),
           useValue: mockBlogModel,
-        }
+        },
       ],
     }).compile();
 
@@ -38,7 +38,7 @@ describe('BlogService', () => {
     };
 
     mockBlogModel.create.mockResolvedValue(mockPost);
-    
+
     expect(service.criarPost(postData)).resolves.toEqual(mockPost);
     expect(mockBlogModel.create).toHaveBeenCalledWith(postData);
   });

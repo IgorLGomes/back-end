@@ -8,11 +8,8 @@ export class BlogController {
   constructor(private readonly blogService: BlogService) {}
 
   @Post()
-  criarPost(
-    @Body() blogDto: BlogCreateDto,
-  ){
+  criarPost(@Body() blogDto: BlogCreateDto) {
     this.logger.log(`Iniciando criação de post no blog...`);
     return this.blogService.criarPost(blogDto);
   }
-
 }

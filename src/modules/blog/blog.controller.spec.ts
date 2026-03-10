@@ -7,7 +7,7 @@ describe('BlogController', () => {
 
   const mockBlogService = {
     criarPost: jest.fn(),
-  }
+  };
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
