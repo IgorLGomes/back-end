@@ -8,6 +8,6 @@ import { SequelizeModule } from '@nestjs/sequelize';
 @Module({
   controllers: [FaqController],
   providers: [FaqService],
-  exports: [FaqService]
+  exports: [FaqService],
 })
 export class FaqModule {}

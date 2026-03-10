@@ -7,7 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     logger: ['error', 'warn', 'log'],
   });
-    
+
   //SWAGGER
   const config = new DocumentBuilder()
     .setTitle('Laboratório de Práticas')
@@ -23,7 +23,7 @@ async function bootstrap() {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     allowedHeaders: '*',
   });
-    
+
   app.useGlobalPipes(validationPipe);
 
   await app.listen(process.env.PORT ?? 3000);

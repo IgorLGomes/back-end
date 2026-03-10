@@ -1,21 +1,25 @@
-import { HttpException, HttpStatus, Injectable, NotFoundException } from '@nestjs/common';
+import {
+  HttpException,
+  HttpStatus,
+  Injectable,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Empresa } from 'src/models/empresa.model';
 import { EmpresaDto } from './dto/empresa-response.dto';
 
-
 @Injectable()
 export class ContatoService {
-
-  constructor(
-    @InjectModel(Empresa) private empresaModel: typeof Empresa
-  ) { }
+  constructor(@InjectModel(Empresa) private empresaModel: typeof Empresa) {}
 
   async buscarContato(): Promise<EmpresaDto> {
     const empresa: Empresa | null = await this.empresaModel.findOne();
 
     if (!empresa) {
-      throw new HttpException('Dados de contato não encontrados', HttpStatus.NOT_FOUND);
+      throw new HttpException(
+        'Dados de contato não encontrados',
+        HttpStatus.NOT_FOUND,
+      );
     }
 
     return new EmpresaDto(
@@ -27,7 +31,7 @@ export class ContatoService {
       empresa.endereco ?? '',
       empresa.cidade ?? '',
       empresa.estado ?? '',
-      empresa.site ?? ''
+      empresa.site ?? '',
     );
   }
 
@@ -47,7 +51,7 @@ export class ContatoService {
       empresa.endereco ?? '',
       empresa.cidade ?? '',
       empresa.estado ?? '',
-      empresa.site ?? ''
+      empresa.site ?? '',
     );
   }
 }
