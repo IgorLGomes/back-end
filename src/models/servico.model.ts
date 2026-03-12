@@ -18,7 +18,11 @@ export class Servico extends Model {
   })
   declare valorBase: number | null;
 
-  @Column({ field: 'prazo_estimado_dias', type: DataType.INTEGER, allowNull: true })
+  @Column({
+    field: 'prazo_estimado_dias',
+    type: DataType.INTEGER,
+    allowNull: true,
+  })
   declare prazoEstimadoDias: number | null;
 
   @Column({ allowNull: true, defaultValue: true })

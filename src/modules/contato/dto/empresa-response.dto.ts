@@ -23,8 +23,8 @@ export class EmpresaDto {
     this.site = site;
   }
   id: number;
-  nomeFantasia: string;  
-  cnpj: string;  
+  nomeFantasia: string;
+  cnpj: string;
   telefone: string;
   email: string;
   endereco: string;

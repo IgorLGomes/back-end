@@ -6,7 +6,7 @@ export class Blog extends Model {
   declare id: number;
 
   @Column({ type: DataType.STRING(150), allowNull: true })
-  declare titulo: string | null;;
+  declare titulo: string | null;
 
   @Column({ type: DataType.TEXT, allowNull: true })
   declare conteudo: string | null;
