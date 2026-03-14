@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { Servico } from '../../models/servico.model';
+import { Servico } from 'src/models/servico.model';
 @Injectable()
 export class ServicosService {
   constructor(

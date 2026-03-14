@@ -50,7 +50,11 @@ describe('ServicosController', () => {
 
   describe('findOne', () => {
     it('deve retornar o serviço quando encontrado', async () => {
-      const mockServico = { id: 1, nome: 'Troca de óleo', descricao: 'Serviço de troca de óleo' };
+      const mockServico = {
+        id: 1,
+        nome: 'Troca de óleo',
+        descricao: 'Serviço de troca de óleo',
+      };
       mockServicosService.findOne.mockResolvedValue(mockServico);
 
       const result = await controller.findOne(1);
