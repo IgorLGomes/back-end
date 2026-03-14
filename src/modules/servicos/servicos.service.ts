@@ -16,7 +16,7 @@ export class ServicosService {
     const servico = await this.servicoModel.findByPk(id);
 
     if (!servico) {
-      throw new NotFoundException(`Servico com id ${id} não encontrado`);
+      throw new NotFoundException(`Serviço com id ${id} não encontrado`);
     }
 
     return servico;
