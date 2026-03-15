@@ -1,4 +1,24 @@
-import { Injectable } from '@nestjs/common';
-
+import { Injectable, NotFoundException } from '@nestjs/common';
+import { InjectModel } from '@nestjs/sequelize';
+import { Servico } from 'src/models/servico.model';
 @Injectable()
-export class ServicosService {}
+export class ServicosService {
+  constructor(
+    @InjectModel(Servico)
+    private servicoModel: typeof Servico,
+  ) {}
+
+  async findAll(): Promise<Servico[]> {
+    return this.servicoModel.findAll();
+  }
+
+  async findOne(id: number): Promise<Servico> {
+    const servico = await this.servicoModel.findByPk(id);
+
+    if (!servico) {
+      throw new NotFoundException(`Serviço com id ${id} não encontrado`);
+    }
+
+    return servico;
+  }
+}
