@@ -41,9 +41,7 @@ describe('ServicosController', () => {
       ];
       mockServicosService.findAll.mockResolvedValue(mockList);
 
-      const result = await controller.findAll();
-
-      expect(result).toEqual(mockList);
+      await expect(controller.findAll()).resolves.toEqual(mockList);
       expect(mockServicosService.findAll).toHaveBeenCalled();
     });
   });
@@ -57,9 +55,7 @@ describe('ServicosController', () => {
       };
       mockServicosService.findOne.mockResolvedValue(mockServico);
 
-      const result = await controller.findOne(1);
-
-      expect(result).toEqual(mockServico);
+      await expect(controller.findOne(1)).resolves.toEqual(mockServico);
       expect(mockServicosService.findOne).toHaveBeenCalledWith(1);
     });
 
