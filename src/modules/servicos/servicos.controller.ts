@@ -6,12 +6,12 @@ export class ServicosController {
   constructor(private readonly servicosService: ServicosService) {}
 
   @Get()
-  async findAll() {
+  findAll(): Promise<Servico[]> {
     return this.servicosService.findAll();
   }
 
   @Get(':id')
-  async findOne(@Param('id', ParseIntPipe) id: number) {
+  findOne(@Param('id', ParseIntPipe) id: number): Promise<Servico> {
     return this.servicosService.findOne(id);
   }
 }
