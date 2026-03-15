@@ -6,6 +6,7 @@ import {
   Param,
   ParseIntPipe,
   Post,
+  Delete
 } from '@nestjs/common';
 import { Blog } from 'src/models/blog.model';
 import { BlogService } from './blog.service';
@@ -33,4 +34,11 @@ export class BlogController {
     this.logger.log(`Iniciando busca de post do blog por Id...`);
     return this.blogService.getById(id);
   }
+
+  @Delete(':id')
+  deleteById(@Param('id', ParseIntPipe) id: number): Promise<void> {
+    this.logger.log(`Iniciando remoção de post do blog por Id...`);
+    return this.blogService.deleteById(id);
+}
+  
 }
