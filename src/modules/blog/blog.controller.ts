@@ -1,4 +1,13 @@
-import { Body, Controller, Logger, Post } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Logger,
+  Param,
+  ParseIntPipe,
+  Post,
+} from '@nestjs/common';
+import { Blog } from 'src/models/blog.model';
 import { BlogService } from './blog.service';
 import { BlogCreateDto } from './dto/blog-create.dto';
 
@@ -8,8 +17,20 @@ export class BlogController {
   constructor(private readonly blogService: BlogService) {}
 
   @Post()
-  criarPost(@Body() blogDto: BlogCreateDto) {
+  criarPost(@Body() blogDto: BlogCreateDto): Promise<Blog> {
     this.logger.log(`Iniciando criação de post no blog...`);
     return this.blogService.criarPost(blogDto);
+  }
+
+  @Get()
+  getAll(): Promise<Blog[]> {
+    this.logger.log(`Iniciando busca de todos os posts do blog...`);
+    return this.blogService.getAll();
+  }
+
+  @Get(':id')
+  getById(@Param('id', ParseIntPipe) id: number): Promise<Blog> {
+    this.logger.log(`Iniciando busca de post do blog por Id...`);
+    return this.blogService.getById(id);
   }
 }

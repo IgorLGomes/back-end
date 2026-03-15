@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Blog } from 'src/models/blog.model';
 import { BlogCreateDto } from './dto/blog-create.dto';
@@ -14,5 +14,19 @@ export class BlogService {
       dataPublicacao: blogDto.dataPublicacao,
       urlImagem: blogDto.urlImagem,
     });
+  }
+
+  async getAll(): Promise<Blog[]> {
+    return this.blogModel.findAll();
+  }
+
+  async getById(id: number): Promise<Blog> {
+    const blog = await this.blogModel.findByPk(id);
+
+    if (!blog) {
+      throw new NotFoundException('Post não encontrado');
+    }
+
+    return blog;
   }
 }
