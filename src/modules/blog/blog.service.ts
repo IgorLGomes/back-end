@@ -14,5 +14,19 @@ export class BlogService {
       dataPublicacao: blogDto.dataPublicacao,
       urlImagem: blogDto.urlImagem,
     });
+    
   }
+  async atualizarPost(id: number, blogDto: BlogCreateDto): Promise<[Number]> {
+  return await this.blogModel.update(
+    {
+      titulo: blogDto.titulo,
+      conteudo: blogDto.conteudo,
+      dataPublicacao: blogDto.dataPublicacao,
+      urlImagem: blogDto.urlImagem,
+    },
+    {
+      where: { id },
+    },
+  );  
+}
 }
