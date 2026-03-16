@@ -28,7 +28,6 @@ export class BlogService {
 
     const response: CloudinaryResponse =
       await this.cloudinaryService.uploadFile(file);
-    this.logger.log(`${response.secure_url}`);
 
     if ('secure_url' in response && typeof response.secure_url === 'string') {
       urlImagem = response.secure_url;
