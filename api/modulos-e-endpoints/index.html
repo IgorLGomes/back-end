@@ -6,7 +6,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Documentacao tecnica do back-end NestJS do projeto Bortone">
+        <meta name="description" content="Documentação técnica do back-end NestJS do projeto Bortone">
       
       
       
@@ -25,7 +25,7 @@
     
     
       
-        <title>Modulos e Endpoints - Back-end Bortone - Documentacao Tecnica</title>
+        <title>Modulos e Endpoints - Back-end Bortone - Documentação Técnica</title>
       
     
     
@@ -92,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
-    <a href="../.." title="Back-end Bortone - Documentacao Tecnica" class="md-header__button md-logo" aria-label="Back-end Bortone - Documentacao Tecnica" data-md-component="logo">
+    <a href="../.." title="Back-end Bortone - Documentação Técnica" class="md-header__button md-logo" aria-label="Back-end Bortone - Documentação Técnica" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +106,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Back-end Bortone - Documentacao Tecnica
+            Back-end Bortone - Documentação Técnica
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -333,13 +333,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegação" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Back-end Bortone - Documentacao Tecnica" class="md-nav__button md-logo" aria-label="Back-end Bortone - Documentacao Tecnica" data-md-component="logo">
+    <a href="../.." title="Back-end Bortone - Documentação Técnica" class="md-nav__button md-logo" aria-label="Back-end Bortone - Documentação Técnica" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Back-end Bortone - Documentacao Tecnica
+    Back-end Bortone - Documentação Técnica
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -613,7 +613,7 @@
   <a href="#observacoes-de-documentacao-da-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Observacoes de documentacao da API
+        Observações de documentação da API
       
     </span>
   </a>
@@ -797,36 +797,36 @@
 
 
 
-<h1 id="modulos-e-endpoints">Modulos e endpoints</h1>
+<h1 id="modulos-e-endpoints">Módulos e endpoints</h1>
 <h2 id="resumo">Resumo</h2>
-<p>Atualmente, o projeto possui <strong>15 controllers</strong> registrados. Destes, <strong>2 controllers</strong> possuem endpoints HTTP implementados no codigo.</p>
+<p>Atualmente, o projeto possui <strong>15 controllers</strong> registrados. Destes, <strong>2 controllers</strong> possuem endpoints HTTP implementados no código.</p>
 <h2 id="endpoints-implementados">Endpoints implementados</h2>
 <h3 id="blog">Blog</h3>
 <ul>
 <li><code>POST /blog</code></li>
-<li>Metodo: <code>criarPost()</code></li>
+<li>Método: <code>criarPost()</code></li>
 <li>Body: <code>BlogCreateDto</code></li>
 <li>Objetivo: criar uma postagem de blog</li>
 </ul>
 <h3 id="contato">Contato</h3>
 <ul>
 <li><code>GET /contato</code></li>
-<li>Metodo: <code>buscarContato()</code></li>
+<li>Método: <code>buscarContato()</code></li>
 <li>
 <p>Objetivo: retornar dados de contato/empresa</p>
 </li>
 <li>
 <p><code>GET /contato/:id</code></p>
 </li>
-<li>Metodo: <code>buscarContatoById(id)</code></li>
-<li>Parametros:<ul>
+<li>Método: <code>buscarContatoById(id)</code></li>
+<li>Parâmetros:<ul>
 <li><code>id</code> (number, validado com <code>ParseIntPipe</code>)</li>
 </ul>
 </li>
 <li>Objetivo: retornar registro de contato por identificador</li>
 </ul>
 <h2 id="controllers-sem-endpoints-http-estrutura-base">Controllers sem endpoints HTTP (estrutura base)</h2>
-<p>Os controllers abaixo existem e estao registrados no modulo raiz, mas ainda sem rotas HTTP declaradas:</p>
+<p>Os controllers abaixo existem e estão registrados no módulo raiz, mas ainda sem rotas HTTP declaradas:</p>
 <ul>
 <li><code>agendamento</code></li>
 <li><code>busca</code></li>
@@ -842,11 +842,11 @@
 <li><code>simulador</code></li>
 <li><code>usuario</code></li>
 </ul>
-<h2 id="observacoes-de-documentacao-da-api">Observacoes de documentacao da API</h2>
+<h2 id="observacoes-de-documentacao-da-api">Observações de documentação da API</h2>
 <ul>
-<li>Swagger esta configurado globalmente em <code>/swagger</code>.</li>
-<li>Decorators Swagger por endpoint estao presentes principalmente em <code>contato</code>.</li>
-<li>Recomendacao: adicionar <code>@ApiTags</code> e respostas padronizadas em todos os controllers conforme os modulos avancarem.</li>
+<li>Swagger está configurado globalmente em <code>/swagger</code>.</li>
+<li>Decorators Swagger por endpoint estão presentes principalmente em <code>contato</code>.</li>
+<li>Recomendação: adicionar <code>@ApiTags</code> e respostas padronizadas em todos os controllers conforme os módulos avançarem.</li>
 </ul>
 
 
